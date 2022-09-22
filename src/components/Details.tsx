@@ -1,5 +1,5 @@
 import { Col,Card,Button } from "react-bootstrap";
-import { News } from "../Types/News";
+import  News  from "../Types/News";
 
 interface NewsArticleProps {
     articleData: News;

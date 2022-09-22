@@ -3,7 +3,11 @@ import News from '../Types/News'
 import Article from './Article';
 import { Container,Row, } from "react-bootstrap";
 
-const MyFetch = () =>{
+interface articleDataProps{
+    setNewsGlobal: function;
+} 
+
+const MyFetch = ({setNewsGlobal}:articleDataProps) =>{
     const[news,setNews] = useState<News[]>([]);
 
 
@@ -19,6 +23,7 @@ const MyFetch = () =>{
                 console.log("fetch ok")
                 const newsArray = await response.json();
                 setNews(newsArray);
+                setNewsGlobal(newsArray);
             }
         }catch(error){
             console.log(error);
@@ -32,7 +37,7 @@ const MyFetch = () =>{
 
             
         {news.map((article,i)=>(              
-            <Article key={i} articleData={article}></Article>
+            <Article key={i} articleData={article} setNewsGlobal={setNewsGlobal} ></Article>
             ))}
             </Row>
             </Container>
