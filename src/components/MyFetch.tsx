@@ -12,19 +12,22 @@ const MyFetch = () =>{
 
     const fetchNews = async () =>{
         try{
-            let response = await fetch(https://api.spaceflightnewsapi.net/v3/articles);
+            console.log("tried to fetch")
+            let response = await fetch("https://api.spaceflightnewsapi.net/v3/articles");
             if(response.ok){
+                console.log("fetch ok")
                 const newsArray = await response.json();
                 setNews(newsArray);
             }
         }catch(error){
             console.log(error);
-        }
+        }finally{console.log("fetch function done")}
     };
 
     return(
         <>
         {news.map((article,i)=>{
+            console.log(article);
             <Article key={i} articleData={article}/>
         })}
         </>
