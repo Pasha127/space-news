@@ -1,4 +1,4 @@
-export interface News{
+ interface News{
        id: number;
        title: string;
        url: string;
@@ -11,3 +11,4 @@ export interface News{
        launches: string[];
        events: string[];
 }
+export default News

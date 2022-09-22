@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
-import {News} from '../Types/News'
+import News from '../Types/News'
 import Article from './Article';
+import { Container,Row, } from "react-bootstrap";
 
 const MyFetch = () =>{
     const[news,setNews] = useState<News[]>([]);
@@ -26,10 +27,15 @@ const MyFetch = () =>{
 
     return(
         <>
-        {news.map((article,i)=>(
-            /* console.log(article); */
-            <Article key={i} articleData={article}/>
-        ))}
+        <Container>
+            <Row>
+
+            
+        {news.map((article,i)=>(              
+            <Article key={i} articleData={article}></Article>
+            ))}
+            </Row>
+            </Container>
         </>
     )
     
