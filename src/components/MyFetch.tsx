@@ -26,10 +26,10 @@ const MyFetch = () =>{
 
     return(
         <>
-        {news.map((article,i)=>{
-            console.log(article);
+        {news.map((article,i)=>(
+            /* console.log(article); */
             <Article key={i} articleData={article}/>
-        })}
+        ))}
         </>
     )
     
