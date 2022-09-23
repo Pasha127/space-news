@@ -12,7 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <Route path="/" element={<Home setNewsGlobal={setNewsGlobal}/> }   
-      <Route path="/:details" element={<Details articleData={newsGlobal}/>}/>    
+      <Route path="/:details" element={<Details />}/>    
     </BrowserRouter>
   );
 }

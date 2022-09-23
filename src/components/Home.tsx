@@ -1,14 +1,13 @@
 import MyFetch from "./MyFetch";
+import News from "../Types/News"
 
-interface articleDataProps{
-    setNewsGlobal: function;
-}
 
-const Home = ({setNewsGlobal}:articleDataProps)=>{
+
+const Home = ()=>{
 return(
     <div className="d-flex flex-column position-abbsolute w-100 justify-content-center align-items-center">
     <div >
-        <MyFetch setNewsGlobal={setNewsGlobal} /></div>
+        <MyFetch /></div>
     </div>
 )
 
